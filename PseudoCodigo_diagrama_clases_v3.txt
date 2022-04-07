@@ -1,0 +1,77 @@
+class Prenda{
+	const tipoPrenda
+	var precioBase
+	var estado = new prendaNueva()
+
+	method getTipoPrenda(){
+		return tipoPrenda
+	}
+
+	method calcularPrecioPrenda(){
+		return estado.calcularPrecioPrenda(precioBase)
+	}
+}
+
+class Nueva{
+	method calcularPrecioPrenda(precio){
+		return precio
+	}
+}
+
+class Promocion{
+	const descuento
+
+	method calcularPrecioPrenda(precio){
+		return precio - descuento
+	}
+}
+
+class Liquidacion{
+	method calcularPrecioPrenda(precio){
+		return precio * 0.5
+	}
+}
+
+class Venta{
+	const prendasVendidas
+	const cantidad
+	const fechaVenta
+	const formaDePago
+	
+	private method getPrecioPrendas(){
+		return prendasVendias.map({prenda => prenda.obtenerPrecioPrenda()}).sum()
+	}
+
+	method totalAPagar(){
+		var montoAPagar = formaDePago.getPrecioFinal(self.getPrecioPrendas())
+		...
+		return montoAPagar
+	}
+}
+
+class Efectivo{
+	method getPrecioFinal(precio){
+		return precio
+	}
+}
+
+class Tarjeta{
+	const cantidadCuotas
+	const coeficienteRecargo
+
+	method getPrecioFinal(precio){
+		return precio + cantidadCuotas * coeficienteRecargo + 0.01 * precio
+	}
+}
+
+class RegistroVentas{
+	var ventas = new List()
+	
+	method registrarVenta(venta){
+		ventas.add(venta)
+	}
+
+	method getGananciasDiarias(fecha){
+		return ventas.filter({venta => venta.getDia() == fecha}).map({venta => venta.totalAPagar()}).sum()
+	}
+}
