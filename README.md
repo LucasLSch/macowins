@@ -11,5 +11,7 @@
 - El sistema debera permitir pagos tanto en efectivo como con tarjeta.
 - El sistema debera calcular el precio final cuando se pague con tarjeta. El racargo se realiza en funcion de la cantidad de cuotas (cantidadCuotas), un coeficiente de recargo (coeficienteRecargo) y el precio de la prenda teniendo en cuenta su estado (precioPrenda). El precio final sigue esta ecuacion:
 _cantidadCuotas * coeficienteRecargo + 0.01 * precioPrenda + precioPrenda_
+- El sistema debe registrar las ventas
+- El sistema debera obtener las ventas diarias
 
 ### **NOTA**: Anote solo los requisitos funcionales que aparecen en el texto. Probablemente existan otros requisitos funcionales y no funcionales que faltarian contemplar pero a falta de contexto no los anoto.
